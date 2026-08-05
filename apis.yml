@@ -1,23 +1,139 @@
 aid: silverfort
 name: Silverfort
-description: 'Silverfort is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Silverfort is an identity security platform that protects human and
+  non-human identities across hybrid environments — on-premises, cloud, and legacy —
+  without agents, proxies, or changes to existing infrastructure. Its Runtime Access
+  Protection (RAP) technology integrates inline with existing IAM infrastructure
+  (Active Directory, Entra ID, Okta, Ping, AWS) and evaluates every authentication
+  attempt in real time before access is granted, extending MFA, identity threat
+  detection and response (ITDR), identity security posture management (ISPM),
+  privileged access security, service-account and non-human-identity governance, and
+  AI agent security to resources that traditional identity tooling cannot reach.
+  Founded in 2016 and headquartered in Dallas, Texas, Silverfort exposes a REST API
+  (the "Raven" service at raven.silverfort.io, with EU and Singapore regional hosts)
+  covering user and resource risk, service-account inventory and insights, policies
+  and enrollment — but the REST API reference is published only inside a
+  customer-authenticated knowledge base, so no public machine-readable contract is
+  available.'
+image: https://www.silverfort.com/wp-content/uploads/2025/02/cropped-Silverfort-Symbol-Pos-RGB.png?w=192
 url: https://raw.githubusercontent.com/api-evangelist/silverfort/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-05'
 modified: '2026-08-05'
 tags:
 - Company
-apis: []
+- Identity
+- Security
+- Authentication
+- Multi-Factor Authentication
+- Identity Security
+- Active Directory
+- Zero Trust
+- Non-Human Identity
+- Cybersecurity
+- ITDR
+- Service Accounts
+apis:
+- aid: silverfort:silverfort-rest-api
+  name: Silverfort REST API
+  description: 'The Silverfort REST API (internally the "Raven" service) exposes user
+    and resource risk read and write, service-account inventory and insights, policy
+    control, and enrollment. Access is controlled by category-scoped API keys issued
+    from the Silverfort Admin Console under Settings > Silverfort API (an External
+    API Key, plus App User ID / App User Secret pairs for the Enrollment, Operations
+    and Risk API key categories). The reference is published only inside the
+    customer-only Document360 knowledge base; no OpenAPI, Swagger, GraphQL SDL or
+    public Postman collection is published.'
+  humanURL: https://docs.silverfort.com/product-documentation/docs/en/silverfort-rest-api-reference50-1
+  baseURL: https://raven.silverfort.io
+  tags:
+  - Identity
+  - Security
+  - Risk
+  - Authentication
+  - Service Accounts
+  properties:
+  - type: Documentation
+    url: https://docs.silverfort.com/
+  x-evidence:
+    checked: '2026-08-05'
+    probes:
+    - url: https://raven.silverfort.io/
+      status: 200
+      note: 'Live API host; responds "Silverfort Raven is UP :-)". Serves no spec.'
+    - url: https://raven.silverfort.io/openapi.json
+      status: 404
+    - url: https://raven.silverfort.io/swagger.json
+      status: 404
+    - url: https://docs.silverfort.com/product-documentation/docs/en/silverfort-rest-api-reference50-1
+      status: 302
+      note: Redirects to identity.document360.io OIDC login.
+    regional_hosts:
+    - https://raven.silverfort.io
+    - https://eu.raven.silverfort.io
+    - https://sg.raven.silverfort.io
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Lifecycle
+  url: lifecycle/silverfort-lifecycle.yml
+- type: StatusPage
+  url: https://status.silverfort.com/
+- type: Conformance
+  url: conformance/silverfort-conformance.yml
+- type: Compliance
+  url: conformance/silverfort-conformance.yml
+- type: TrustCenter
+  url: security/silverfort-trust-center.yml
+- type: DomainSecurity
+  url: security/silverfort-domain-security.yml
 - type: Website
-  url: https://forgeglobal.com/silverfort_stock/
+  url: https://www.silverfort.com/
+- type: Documentation
+  url: https://docs.silverfort.com/
+- type: APIReference
+  url: https://docs.silverfort.com/product-documentation/docs/en/silverfort-rest-api-reference50-1
+- type: Support
+  url: https://support.silverfort.com/hc/en-us
+- type: Blog
+  url: https://www.silverfort.com/blog/
+- type: GitHubOrganization
+  url: https://github.com/silverfort-open-source
+- type: Pricing
+  url: https://www.silverfort.com/pricing/
+- type: SignUp
+  url: https://www.silverfort.com/request-a-demo/
+- type: TermsOfService
+  url: https://www.silverfort.com/terms-of-use/
+- type: PrivacyPolicy
+  url: https://www.silverfort.com/privacy-policy/
+- type: LLMsTxt
+  url: llms/silverfort-llms.txt
+x-enrichment:
+  date: '2026-08-05'
+  status: minimal
+  artifacts_added: 6
+  pass: local-v1
+x-coverage:
+  state: gated
+  reason: customer-only-docs
+  detail: >-
+    The Silverfort REST API Reference at docs.silverfort.com 302s to a Document360
+    OIDC login at identity.document360.io, and that docs host then answers HTTP 200
+    with the identical ~10.7KB login shell for every path — /openapi.json,
+    /swagger.json and /llms.txt included — while the live API host
+    raven.silverfort.io serves "Silverfort Raven is UP :-)" and a real 404 for every
+    spec location.
+  evidence:
+  - url: https://docs.silverfort.com/product-documentation/docs/en/silverfort-rest-api-reference50-1
+    status: 302
+  - url: https://raven.silverfort.io/openapi.json
+    status: 404
+  - url: https://raven.silverfort.io/
+    status: 200
+  checked: '2026-08-05'

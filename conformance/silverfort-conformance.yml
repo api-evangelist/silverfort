@@ -1,0 +1,73 @@
+generated: '2026-08-05'
+method: searched
+source: https://trust.silverfort.com/
+note: >-
+  Asserted only from publicly readable sources. Silverfort's REST API reference is
+  behind a customer-only login, so protocol-level conformance (pagination,
+  idempotency, RFC 9457 problem details, error envelope) could not be assessed —
+  those entries are recorded as unknown rather than false.
+standards:
+- id: soc2
+  conforms: true
+  evidence: SOC 2 named on the public trust center (https://trust.silverfort.com/).
+- id: iso27001
+  conforms: true
+  evidence: >-
+    ISO/IEC 27001:2022 named on the public trust center
+    (https://trust.silverfort.com/).
+- id: gdpr
+  conforms: true
+  evidence: >-
+    GDPR named on the public trust center and detailed in the privacy policy
+    (https://www.silverfort.com/privacy-policy/).
+- id: ccpa
+  conforms: true
+  evidence: CCPA/CPRA named on the public trust center.
+- id: eu-us-dpf
+  conforms: true
+  evidence: EU-US Data Privacy Framework named on the public trust center.
+- id: nist-csf
+  conforms: true
+  evidence: NIST Cybersecurity Framework named on the public trust center.
+- id: oauth2
+  conforms: false
+  evidence: >-
+    The Silverfort REST API is documented by first- and third-party integration docs
+    as using category-scoped API keys (External API Key; App User ID + App User
+    Secret for Enrollment/Operations/Risk), not OAuth 2.0. No
+    /.well-known/oauth-authorization-server on any Silverfort host (404).
+- id: oidc
+  conforms: unknown
+  evidence: >-
+    Silverfort integrates with OIDC/SAML identity providers as a product capability,
+    but publishes no OIDC discovery document of its own
+    (/.well-known/openid-configuration returns 404 on www.silverfort.com and
+    raven.silverfort.io).
+- id: rfc9457
+  conforms: unknown
+  evidence: No public error reference or spec to assess; API reference is login-gated.
+- id: pagination
+  conforms: unknown
+  evidence: No public API reference to assess.
+- id: idempotency
+  conforms: unknown
+  evidence: No public API reference to assess.
+- id: rfc9116
+  conforms: false
+  evidence: >-
+    https://www.silverfort.com/.well-known/security.txt returns 404; no security.txt
+    is published.
+- id: rfc8594
+  conforms: unknown
+  evidence: >-
+    No public deprecation/sunset policy; Deprecation and Sunset header usage cannot
+    be observed without API credentials.
+evidence:
+- url: https://trust.silverfort.com/
+  status: 200
+- url: https://www.silverfort.com/.well-known/security.txt
+  status: 404
+- url: https://www.silverfort.com/.well-known/openid-configuration
+  status: 404
+- url: https://raven.silverfort.io/.well-known/oauth-authorization-server
+  status: 404

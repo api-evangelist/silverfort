@@ -1,0 +1,56 @@
+generated: '2026-08-05'
+method: searched
+source: https://status.silverfort.com/
+status_page:
+  url: https://status.silverfort.com/
+  platform: Hyperping
+  public: true
+  http_status: 200
+  fetched: '2026-08-05'
+  current_state: All systems operational
+  window: 90-day rolling uptime per component
+  regional_grouping: true
+  subscribe: true
+  components:
+  - name: Global MFA Service (CMS)
+    uptime_90d: '99.997%'
+  - name: Europe MFA Service (CMS)
+    uptime_90d: '100.000%'
+  - name: Singapore MFA Service (CMS)
+    uptime_90d: '100.000%'
+  - name: Silverfort Azure AD Connector
+    note: tracked per region
+  - name: Silverfort for Windows Logon
+    note: tracked per region
+  - name: FIDO2 Service
+    note: tracked per region
+  - name: Geolocation Data Service
+    note: tracked per region
+  - name: Desktop Messaging Service SaaS
+    uptime_90d: '100.000%'
+  - name: Azure Service Bus (MMS)
+    note: >-
+      tracked per Azure region — West Europe, East US, Southeast Asia, Australia
+      East, Germany West Central, France Central
+versioning:
+  scheme: unknown
+  note: >-
+    The REST API reference is versioned in the customer-only knowledge base (the
+    reference slug carries a `50-1` release suffix), but no public versioning policy
+    page is published.
+deprecation_policy:
+  published: false
+  sunset_header: unknown
+  note: >-
+    No public deprecation or sunset policy was found. Product release notes and the
+    API reference live inside the authenticated Document360 knowledge base at
+    docs.silverfort.com, which returns an OIDC login for every path.
+sla:
+  published: false
+  note: No public SLA document found on the marketing site or trust center.
+evidence:
+- url: https://status.silverfort.com/
+  status: 200
+- url: https://docs.silverfort.com/
+  status: 302
+  note: Redirects to identity.document360.io login.

@@ -1,0 +1,55 @@
+generated: '2026-08-05'
+method: searched
+probe: true
+source: https://trust.silverfort.com/
+url: https://trust.silverfort.com/
+platform: SafeBase (Drata)
+access_model: >-
+  The trust center landing page is public and names the certifications and frameworks
+  below. The underlying evidence documents (SOC 2 report, penetration-test / product
+  security assessment, security whitepaper, architecture diagrams, vulnerability
+  assessment report) are gated behind a "Get access" request/approval workflow rather
+  than being publicly downloadable.
+certifications:
+- SOC 2
+- ISO 27001
+- GDPR
+frameworks_named:
+- name: SOC 2
+  note: AICPA SOC 2 Type 2 Trust Services Criteria referenced as a benchmarking standard.
+- name: ISO/IEC 27001:2022
+- name: GDPR
+- name: CCPA
+- name: CPRA
+- name: EU-US Data Privacy Framework
+- name: Microsoft SSPA
+- name: NIST Cybersecurity Framework
+benchmarking_standards:
+- ISO 27xxx
+- ITIL
+- NIST Cybersecurity Framework
+- SANS Top 20 Critical Security Controls
+- SANS/CWE Top 25
+- CIS Controls v8
+- COSO Enterprise Risk Framework
+- OWASP Top 10
+gated_documents:
+- Product Security Assessment (Pentest)
+- Security Whitepaper
+- Architecture Diagrams
+- Vulnerability Assessment Report
+evidence:
+- source: https://trust.silverfort.com/
+  http_status: 200
+  fetched: '2026-08-05'
+  keywords:
+  - soc 2
+  - soc2
+  - iso/iec 27001
+  - trust center
+  - gdpr
+notes: >-
+  No RFC 9116 security.txt is published at silverfort.com/.well-known/security.txt
+  (404), and no /security or /responsible-disclosure page exists (both 404), so no
+  VulnerabilityDisclosure artifact is recorded. The trust center is the only public
+  security-assurance surface found.
