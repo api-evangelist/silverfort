@@ -19,7 +19,7 @@ image: https://www.silverfort.com/wp-content/uploads/2025/02/cropped-Silverfort-
 url: https://raw.githubusercontent.com/api-evangelist/silverfort/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-specificationVersion: '0.20'
+specificationVersion: '0.23'
 created: '2026-08-05'
 modified: '2026-08-05'
 tags:
