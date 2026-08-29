@@ -15,6 +15,17 @@ description: 'Silverfort is an identity security platform that protects human an
   and enrollment — but the REST API reference is published only inside a
   customer-authenticated knowledge base, so no public machine-readable contract is
   available.'
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://www.silverfort.com/wp-content/uploads/2025/02/cropped-Silverfort-Symbol-Pos-RGB.png?w=192
 url: https://raw.githubusercontent.com/api-evangelist/silverfort/refs/heads/main/apis.yml
 x-type: company
