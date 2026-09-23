@@ -1,0 +1,30 @@
+# Front Door AI Index — silverfort — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: silverfort
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: www.silverfort.com
+  final_host: www.silverfort.com
+  ownership: own
+  owner: silverfort
+  shares_host_with: null
+  inherited_from: null
+  verdict: scored
+  score: 48
+  host_score: 48
+  density: 35.09
+  words: 1368
+  tiers:
+    agentic: 7
+    core: 38
+    model: 3
+  ambiguous: 12
+  top_terms:
+    AI: 38
+    agent: 10
+    AI agent: 6
+    Anthropic: 3
+    intelligence: 2
+    agentic: 1
