@@ -74,6 +74,12 @@ apis:
   tags:
   - Identity
   - Security
+  - Risk Management
+  - Authentication
+  - Service Accounts
+  tags_raw:
+  - Identity
+  - Security
   - Risk
   - Authentication
   - Service Accounts
