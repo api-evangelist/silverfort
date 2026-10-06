@@ -44,7 +44,7 @@ x-type: company
 x-source: harvest:secondary-market
 specificationVersion: '0.23'
 created: '2026-08-05'
-modified: '2026-08-05'
+modified: '2026-10-06'
 tags:
 - Company
 - Identity
@@ -109,6 +109,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- url: https://www.silverfort.com/feed/
+  type: BlogRSS
 - type: Lifecycle
   url: lifecycle/silverfort-lifecycle.yml
 - type: StatusPage
